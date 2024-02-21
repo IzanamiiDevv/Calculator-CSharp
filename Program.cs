@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 
 namespace Calculator
 {
@@ -19,28 +18,34 @@ namespace Calculator
             num2 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"Number1:{num1}, Operator:{oper},Number2:{num2}");
 
-            Console.WriteLine($"{num1}{oper}{num2}=",Calculate(num1,num2,oper));
+
+            Calculate(num1,num2,oper);
             Console.ReadKey();
             
         }
 
-        static int Calculate(int num1,int num2,string oprtor)
+        static void Calculate(int num1, int num2, string oper)
         {
-            switch (oprtor)
+            switch (oper)
             {
                 case "+":
-                    return Add(num1,num2);
+                    Console.WriteLine($"{num1} {oper} {num2} = {Add(num1, num2)}");
+                    break;
                 case "-":
-                    return Subtract(num1,num2);
+                    Console.WriteLine($"{num1} {oper} {num2} = {Subtract(num1, num2)}");
+                    break;
                 case "*":
-                    return Multiply(num1,num2);
+                    Console.WriteLine($"{num1} {oper} {num2} = {Multiply(num1, num2)}");
+                    break;
                 case "/":
-                    return Devide(num1,num2);
+                    Console.WriteLine($"{num1} {oper} {num2} = {Devide(num1, num2)}");
+                    break;
                 default:
-                   Console.WriteLine("Invalid Operator");
-                   return 0;
+                    Console.WriteLine("Invalid Operator");
+                    break;
             }
         }
+
 
         static int Add(int n1,int n2)
         {
